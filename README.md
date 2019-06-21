@@ -8,5 +8,5 @@ These microsevices were delpoyed on our local Ubuntu 14.04 Server, which runs an
 
 | Customer Service  | Order Service | Menu Service | 
 | ------------- | ------------- |-------------  |
-| Find Customer | Create Order  | View Food |
+| Find Customer | Create Order  | Find Food |
 | Delete Customer | Order Status  | Delete Food |
