@@ -104,12 +104,12 @@ paths:
       operationId: api.findfood
       tags:
         - customer
-      summary: Read one customer from the customer db
-      description: Read one customer from the customer db
+      summary: Read one food from the food db
+      description: Read one food from the food db
       parameters:
         - name: fno
           in: path
-          description: Last name of the customer to get from the db
+          description: to get food name from the db
           type: string
           required: True
       responses:
@@ -123,8 +123,8 @@ paths:
     delete:
       operationId: api.deletefood
       tags:
-        - customer
-      summary: Delete a customer from the customer db
+        - food
+      summary: Delete a food from the food db
       description: Delete a customer
       parameters:
         - name: fno
