@@ -25,6 +25,5 @@ Find Food: http://localhost:5000/api/customer/food-id
 
 Delete Food: curl -H "Content-Type: application/json" -X DELETE http://localhost:5000/api/food/food-id
 
-
-
+Note: the project can be enhanced using RPC Services.
 
