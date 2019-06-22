@@ -1,0 +1,137 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger ReST Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /customer/{cno}:
+    get:
+      operationId: api.customerfind
+      tags:
+        - customer
+      summary: Read one customer from the customer db
+      description: Read one customer from the customer db
+      parameters:
+        - name: cno
+          in: path
+          description: Last name of the customer to get from the db
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read customer from customer db operation
+          schema:
+            properties:
+              fname:
+                type: string
+              lname:
+                type: string
+    delete:
+      operationId: api.customerdelete
+      tags:
+        - customer
+      summary: Delete a customer from the customer db
+      description: Delete a customer
+      parameters:
+        - name: cno
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a customer from customer db
+
+  /order:
+    post:
+      operationId: api.ordercreate
+      tags:
+        - people
+      summary: Create a new order 
+      description: Creating a new order and adding it to the DB
+      parameters:
+        - name: order
+          in: body
+          description: Person to create
+          required: True
+          schema:
+            type: object
+            properties:
+              cid:
+                type: string
+                description: Customer ID
+              pizza:
+                type: string
+                description: Pizza ID
+      responses:
+        201:
+          description: Successfully created person in list
+
+  /order/{oid}:
+    get:
+      operationId: api.orderstatus
+      tags:
+        - customer
+      summary: Read one customer from the customer db
+      description: Read one customer from the customer db
+      parameters:
+        - name: oid
+          in: path
+          description: Last name of the customer to get from the db
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read customer from customer db operation
+          schema:
+            properties:
+              fname:
+                type: string
+              lname:
+                type: string
+              timestamp:
+                type: string
+
+  /food/{fno}:
+    get:
+      operationId: api.findfood
+      tags:
+        - customer
+      summary: Read one customer from the customer db
+      description: Read one customer from the customer db
+      parameters:
+        - name: fno
+          in: path
+          description: Last name of the customer to get from the db
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read food from food db
+          schema:
+            properties:
+              fname:
+                type: string
+
+    delete:
+      operationId: api.deletefood
+      tags:
+        - customer
+      summary: Delete a customer from the customer db
+      description: Delete a customer
+      parameters:
+        - name: fno
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a food from food db
+
