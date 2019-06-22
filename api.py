@@ -2,12 +2,10 @@
 This is the app module
 """
 
-import datetime
-
 # 3rd party modules
 from flask import make_response, abort
-
 import mysql.connector
+import datetime
 import json
 
 mydb = mysql.connector.connect(
